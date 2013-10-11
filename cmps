@@ -1,9 +1,18 @@
-@@ -0,0 +1,8 @@
-+#include <stdio.h>
+@@ -1,8 +1,14 @@
+ #include <stdio.h>
++#include <stdlib.h>
++#include <time.h>
+ 
+-int main (void)
++int main(void)
+ {
+-	printf("行き先を決める壊れたコンパス¥n");
++	srand(time(NULL));
 +
-+int main (void)
-+{
-+	printf("行き先を決める壊れたコンパス¥n");
-+
-+	return 0;
-+}
++	int hgk = rand()%16;	//方角（とりあえず１６方位）最終的に選択
++	
++	printf("北を正面に %02d の方へ¥n".hgk);
+ 
+ 	return 0;
+-}
++} 
