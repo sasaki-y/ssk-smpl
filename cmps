@@ -1,0 +1,9 @@
+@@ -0,0 +1,8 @@
++#include <stdio.h>
++
++int main (void)
++{
++	printf("行き先を決める壊れたコンパス¥n");
++
++	return 0;
++}
