@@ -1,40 +1,27 @@
-@@ -4,31 +4,16 @@
+@@ -8,12 +8,22 @@ int main(void)
  
- int main(void)
- {
-+	int dt = 0;
-+
  	srand(time(NULL));
  
--	int hgk = rand()%16;	//方角（とりあえず１６方位）最終的に選択
-+	printf("進む方角の数を指定");
-+	scanf("%d".&dt);
+-	printf("進む方角の数を指定");
+-	scanf("%d".&dt);
+-	
++	printf("進む方角の数を1~6で指定(2:3:4:8:16:32)");
++	scanf("%[1,2,3,4,5,6]".&dt);
++	switch(dt){
++		case 1:	dt = 2;	break;
++		case 2:	dt = 3;	break;
++		case 3:	dt = 4;	break;
++		case 4:	dt = 8;	break;
++		case 5:	dt = 16;	break;
++		case 6:	dt = 32;	break;
++		default :	break;
++	}
++
+ 	int hgk = rand()%dt;	//方角 指定された数でランダム
  	
--	switch(hgk){
--		case 1:	printf("北");	break;
--		case 2:	printf("北北東");	break;
--		case 3:	printf("北東");	break;
--		case 4:	printf("東北東");	break;
--		case 5:	printf("東");	break;
--		case 6:	printf("東南東");	break;
--		case 7:	printf("南東");	break;
--		case 8:	printf("南南東");	break;
--		case 9:	printf("南");	break;
--		case 10:	printf("南南西");	break;
--		case 11:	printf("南西");	break;
--		case 12:	printf("西南西");	break;
--		case 13:	printf("西");	break;
--		case 14:	printf("西北西");	break;
--		case 15:	printf("北西");	break;
--		case 16:	printf("北北西");	break;
--		default :	printf("帰宅");	break;
--	}
--
--	printf("に行きましょう¥n");
-+	int hgk = rand()%dt;	//方角 指定された数でランダム
-+	
-+	printf("%02d の方へ¥n".hgk);
+ 	printf("%02d の方へ¥n".hgk);
  
  	return 0;
--}
-+} 
+-} 
++}
++
